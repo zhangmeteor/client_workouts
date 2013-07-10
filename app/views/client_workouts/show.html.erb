@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client name:</strong>
+  <%= @client_workout.client_name %>
+</p>
+
+<p>
+  <strong>Trainer:</strong>
+  <%= @client_workout.trainer %>
+</p>
+
+<p>
+  <strong>Duration mins:</strong>
+  <%= @client_workout.duration_mins %>
+</p>
+
+<p>
+  <strong>Date of workout:</strong>
+  <%= @client_workout.date_of_workout %>
+</p>
+
+<p>
+  <strong>Paid amount:</strong>
+  <%= @client_workout.paid_amount %>
+</p>
+
+<%= link_to 'Edit', edit_client_workout_path(@client_workout) %> |
+<%= link_to 'Back', client_workouts_path %>
