@@ -1211,3 +1211,151 @@ Processing by ClientWorkoutsController#index as HTML
   [1m[35mClientWorkout Load (0.3ms)[0m  SELECT "client_workouts".* FROM "client_workouts"
   Rendered client_workouts/index.html.erb within layouts/client_workouts (3.3ms)
 Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/client_workouts/new" for 127.0.0.1 at 2013-07-10 23:38:47 +0800
+Processing by ClientWorkoutsController#new as HTML
+  Rendered client_workouts/_form.html.erb (491.4ms)
+  Rendered client_workouts/new.html.erb within layouts/client_workouts (494.8ms)
+Completed 200 OK in 568ms (Views: 567.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/client_workouts" for 127.0.0.1 at 2013-07-10 23:39:04 +0800
+Processing by ClientWorkoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpw0GIjxQUi4xv7QOcehnbgpiX27tygpgdEopPwoifc=", "client_workout"=>{"client_name"=>"xxx", "trainer"=>"xx", "duration_mins"=>"7", "date_of_workout(1i)"=>"2013", "date_of_workout(2i)"=>"7", "date_of_workout(3i)"=>"10", "paid_amount"=>"$50"}, "commit"=>"Create Client workout"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (110.6ms)[0m  INSERT INTO "client_workouts" ("client_name", "created_at", "date_of_workout", "duration_mins", "paid_amount", "trainer", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["client_name", "xxx"], ["created_at", Wed, 10 Jul 2013 15:39:04 UTC +00:00], ["date_of_workout", Wed, 10 Jul 2013], ["duration_mins", 7], ["paid_amount", #<BigDecimal:7f8f329b77b0,'0.0',9(9)>], ["trainer", "xx"], ["updated_at", Wed, 10 Jul 2013 15:39:04 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/client_workouts/4
+Completed 302 Found in 152ms (ActiveRecord: 112.2ms)
+
+
+Started GET "/client_workouts/4" for 127.0.0.1 at 2013-07-10 23:39:04 +0800
+Processing by ClientWorkoutsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mClientWorkout Load (0.3ms)[0m  SELECT "client_workouts".* FROM "client_workouts" WHERE "client_workouts"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered client_workouts/show.html.erb within layouts/client_workouts (2.5ms)
+Completed 200 OK in 58ms (Views: 42.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/client_workouts" for 127.0.0.1 at 2013-07-10 23:39:13 +0800
+Processing by ClientWorkoutsController#index as HTML
+  [1m[36mClientWorkout Load (0.4ms)[0m  [1mSELECT "client_workouts".* FROM "client_workouts"[0m
+  Rendered client_workouts/index.html.erb within layouts/client_workouts (11.4ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/client_workouts" for 127.0.0.1 at 2013-07-11 00:09:44 +0800
+Processing by ClientWorkoutsController#index as HTML
+  [1m[35mClientWorkout Load (0.2ms)[0m  SELECT "client_workouts".* FROM "client_workouts"
+  Rendered client_workouts/index.html.erb within layouts/client_workouts (44.0ms)
+Completed 200 OK in 129ms (Views: 122.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/client_workouts/new" for 127.0.0.1 at 2013-07-11 00:09:46 +0800
+Processing by ClientWorkoutsController#new as HTML
+  Rendered client_workouts/_form.html.erb (10.7ms)
+  Rendered client_workouts/new.html.erb within layouts/client_workouts (13.3ms)
+Completed 200 OK in 96ms (Views: 94.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/client_workouts" for 127.0.0.1 at 2013-07-11 00:10:05 +0800
+Processing by ClientWorkoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpw0GIjxQUi4xv7QOcehnbgpiX27tygpgdEopPwoifc=", "client_workout"=>{"client_name"=>"ccccc", "trainer"=>"ccc", "duration_mins"=>"5", "date_of_workout(1i)"=>"2013", "date_of_workout(2i)"=>"7", "date_of_workout(3i)"=>"10", "paid_amount"=>"$50"}, "commit"=>"Create Client workout"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  Rendered client_workouts/_form.html.erb (74.9ms)
+  Rendered client_workouts/new.html.erb within layouts/client_workouts (75.8ms)
+Completed 200 OK in 96ms (Views: 88.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/client_workouts" for 127.0.0.1 at 2013-07-11 00:16:17 +0800
+Processing by ClientWorkoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpw0GIjxQUi4xv7QOcehnbgpiX27tygpgdEopPwoifc=", "client_workout"=>{"client_name"=>"ccccc", "trainer"=>"", "duration_mins"=>"5", "date_of_workout(1i)"=>"2013", "date_of_workout(2i)"=>"7", "date_of_workout(3i)"=>"10", "paid_amount"=>"$50"}, "commit"=>"Create Client workout"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 143ms
+
+NoMethodError (undefined method `Where's your name?' for #<ClientWorkout:0x007f8f31622d80>):
+  app/controllers/client_workouts_controller.rb:30:in `block in create'
+  app/controllers/client_workouts_controller.rb:29:in `create'
+
+
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.4ms)
+
+
+Started GET "/client_workouts" for 127.0.0.1 at 2013-07-11 00:17:57 +0800
+Processing by ClientWorkoutsController#index as HTML
+Completed 500 Internal Server Error in 19ms
+
+SyntaxError (/Users/zhanghao/client_workouts/app/models/client_workout.rb:4: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+  validates_presence_of :trainer "Where's your name?"
+                                  ^):
+  app/controllers/client_workouts_controller.rb:7:in `index'
+
+
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.0ms)
+
+
+Started GET "/client_workouts" for 127.0.0.1 at 2013-07-11 00:18:00 +0800
+Processing by ClientWorkoutsController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/zhanghao/client_workouts/app/models/client_workout.rb:4: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+  validates_presence_of :trainer "Where's your name?"
+                                  ^):
+  app/controllers/client_workouts_controller.rb:7:in `index'
+
+
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.9ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.9ms)
+  Rendered /Users/zhanghao/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (66.8ms)
+
+
+Started GET "/client_workouts" for 127.0.0.1 at 2013-07-11 00:18:16 +0800
+Processing by ClientWorkoutsController#index as HTML
+  [1m[36mClientWorkout Load (0.5ms)[0m  [1mSELECT "client_workouts".* FROM "client_workouts"[0m
+  Rendered client_workouts/index.html.erb within layouts/client_workouts (57.5ms)
+Completed 200 OK in 125ms (Views: 117.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/client_workouts/new" for 127.0.0.1 at 2013-07-11 00:18:23 +0800
+Processing by ClientWorkoutsController#new as HTML
+  Rendered client_workouts/_form.html.erb (10.0ms)
+  Rendered client_workouts/new.html.erb within layouts/client_workouts (11.5ms)
+Completed 200 OK in 83ms (Views: 81.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/client_workouts" for 127.0.0.1 at 2013-07-11 00:18:44 +0800
+Processing by ClientWorkoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpw0GIjxQUi4xv7QOcehnbgpiX27tygpgdEopPwoifc=", "client_workout"=>{"client_name"=>"sss", "trainer"=>"", "duration_mins"=>"1", "date_of_workout(1i)"=>"2013", "date_of_workout(2i)"=>"7", "date_of_workout(3i)"=>"10", "paid_amount"=>"$50"}, "commit"=>"Create Client workout"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered client_workouts/_form.html.erb (25.9ms)
+  Rendered client_workouts/new.html.erb within layouts/client_workouts (30.5ms)
+Completed 200 OK in 98ms (Views: 84.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/client_workouts/new" for 127.0.0.1 at 2013-07-11 00:39:13 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ClientWorkoutsController#new as HTML
+  Rendered client_workouts/_form.html.erb (199.1ms)
+  Rendered client_workouts/new.html.erb within layouts/client_workouts (277.8ms)
+Completed 200 OK in 561ms (Views: 443.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/client_workouts" for 127.0.0.1 at 2013-07-11 00:39:27 +0800
+Processing by ClientWorkoutsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xpw0GIjxQUi4xv7QOcehnbgpiX27tygpgdEopPwoifc=", "client_workout"=>{"client_name"=>"fffff", "trainer"=>"", "duration_mins"=>"1", "date_of_workout(1i)"=>"2013", "date_of_workout(2i)"=>"7", "date_of_workout(3i)"=>"10", "paid_amount"=>"50"}, "commit"=>"Create Client workout"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered client_workouts/_form.html.erb (42.1ms)
+  Rendered client_workouts/new.html.erb within layouts/client_workouts (44.0ms)
+Completed 200 OK in 109ms (Views: 56.4ms | ActiveRecord: 0.2ms)
