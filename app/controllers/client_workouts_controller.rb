@@ -63,7 +63,7 @@ class ClientWorkoutsController < ApplicationController
 
   #find
   def find
-    @client_workouts = ClientWorkout.find_all_by_client_name(params[:search_string])
+    @client_workouts = ClientWorkout.find(:all,:conditions=>["client_name = ? OR trainer = ?",params[:search_string],params[:search_string]])
   end
 
   private
